@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://qrco.de/NikeJustDoIT -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <link rel="stylesheet" type="text/css" href="./Coupon Page_files/template_normal.min.css">
+<script type="text/javascript">
+/*<![CDATA[*/
+YII_CSRF_TOKEN='434fb7a451f1c624c8f7d699da96da453383b1e4';
+/*]]>*/
+</script>
+<title>Coupon Page</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="https://qrco.de/img/favicon/favicon.ico" type="image/x-icon">
+    <script type="text/javascript">
+        window.GLOBAL_CSRF_TOKEN = '434fb7a451f1c624c8f7d699da96da453383b1e4';
+    </script>
+        <link href="./Coupon Page_files/css" rel="stylesheet">
+
+    <!--Facebook meta-->
+    <meta property="og:url" content="http://qrco.de/NikeJustDoIT?trackSharing=1">
+    <meta property="og:title" content="Just Do it!">
+    <meta property="og:description" content="NIKE">
+    <meta property="og:image" content="http://qrcgcustomers.s3-eu-west-1.amazonaws.com/account19751710/28257674_1.png?0.6377069091194827">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://qrco.de/NikeJustDoIT?trackSharing=1">
+    <meta name="twitter:title" content="Just Do it!">
+    <meta name="twitter:description" content="NIKE">
+    <meta name="twitter:image" content="http://qrcgcustomers.s3-eu-west-1.amazonaws.com/account19751710/28257674_1.png?0.6377069091194827">
+    <meta name="twitter:image:width" content="200">
+    <meta name="twitter:image:height" content="200">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Just Do it!">
+    <meta itemprop="description" content="NIKE">
+    <meta itemprop="image" content="http://qrcgcustomers.s3-eu-west-1.amazonaws.com/account19751710/28257674_1.png?0.6377069091194827">
+</head>
+<body ng-app="app" id="coupon-body" ng-controller="ComplexController" ng-style="{background: view.code.color1}" class="sh-body ng-scope" style="background: rgb(255, 255, 255);">
+
+    <div class="loading-welcome active welcome-screen" ng-style="{&#39;background-color&#39;: view.code.welcome_extra.background || view.welcome_extra.background}" style="background-color: rgb(255, 255, 255); display: none;">
+    <div class="progress">
+        <div class="loading-bar indeterminate" ng-style="{&#39;background-color&#39;: view.code.color1 || view.color1}" style="background-color: rgb(255, 255, 255);"></div>
+    </div>
+    <div class="helper"></div>
+    <img id="welcomeImg" imageonload="" ng-src="//qrcgcustomers.s3-eu-west-1.amazonaws.com/account19751710/28258455_1.png?0.01822601228362042" ng-style="{
+            &#39;max-width&#39;: view.code.welcome_extra.zoom *2 || view.welcome_extra.zoom *2 + &#39;px&#39;,
+            &#39;max-height&#39;: view.code.welcome_extra.zoom *2 || view.welcome_extra.zoom *2 + &#39;px&#39;,
+            &#39;animation-iteration-count&#39; :  view.showPreview == &#39;infinite&#39; ? &#39;infinite&#39; : &#39;&#39;,
+            &#39;animation-direction&#39; :  view.showPreview == &#39;infinite&#39; ? &#39;alternate&#39; : &#39;&#39;
+            }" src="./Coupon Page_files/28258455_1.png" style="max-width: 100px; max-height: 100px; display: inline;">
+</div>
+    
+    <div class="sh-bar" ng-style="{background: view.code.color1, color: getTextColor1()}" style="background: rgb(255, 255, 255); color: rgb(51, 51, 51);">
+        <div class="sh-container" style="position: relative;">
+            <div class="sh-bar__header ng-binding">
+                NIKE
+                <i class="sh-bar__share icon icon-event-share" id="share-fab-button"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="sh-background" ng-style="{background: hexToRgbA(view.code.color1, 0.2)}" style="background: rgba(255, 255, 255, 0.2);"></div>
+
+    <div class="sh-container" id="rootElement"><!-- rootElement is important for sync data -->
+        <div ng-hide="hasAnyContentToDisplay()" class="ng-hide">
+            <div class="vcard-row text-center mt-20">
+                <h4>Waiting for you to enter data</h4>
+            </div>
+            <div class="sk-three-bounce">
+                <div class="sk-child sk-bounce1"></div>
+                <div class="sk-child sk-bounce2"></div>
+                <div class="sk-child sk-bounce3"></div>
+            </div>
+        </div>
+        <div ng-show="hasAnyContentToDisplay()" class="fabOnTop">
+            <div class="sh-page" ng-show="page.index &lt;= 0">
+<!--    <div class="sh-card" ng-class="{'sh-card--flip': page.index > 0}">-->
+<!--        <div class="sh-card__side sh-card__side--front">-->
+<!--        </div>-->
+<!--        <div class="sh-card__side sh-card__side--back">-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="sh-coupon" ng-style="{paddingTop: view.code.avatar ? &#39;&#39; : &#39;37px&#39;}">
+        <div ng-style="getAvatarContainerStyle()" style="text-align: center; background: rgb(255, 255, 255); border-radius: 2px 2px 0px 0px; height: 360px; padding-top: 0px;" ng-show="view.code.avatar">
+            <img ng-src="//qrcgcustomers.s3-eu-west-1.amazonaws.com/account19751710/28257674_1.png?0.6377069091194827" alt="" class="sh-coupon__avatar" ng-style="getAvatarStyle()" src="./Coupon Page_files/28257674_1.png" style="max-width: 100%;">
+        </div>
+        <div class="sh-coupon__content">
+            <span class="sh-coupon__badge ng-binding" ng-show="view.code.sale" ng-style="{background: view.code.color1, color: getTextColor1()}" style="background: rgb(255, 255, 255); color: rgb(51, 51, 51);">$400.00</span>
+            <h1 class="sh-coupon__headline ng-binding" ng-show="view.code.headline">Just Do it!</h1>
+            <p class="sh-coupon__description ng-binding" ng-show="view.code.description">Winner of the  2nd national SuperKumi!!  Cant wait to see you next time!
+From: SuperKumi - Summit</p>
+        </div>
+        <div class="sh-coupon__actions">
+            <button type="button" class="sh-button sh-button--primary sh-button--uppercase" ng-click="setPageIndex(1)" ng-style="{background: view.code.color2, color: getTextColor2()}" style="background: rgb(229, 159, 28); color: rgb(255, 255, 255);">
+                Get coupon            </button>
+            <div class="sh-coupon__hole-left" ng-style="{background: view.code.color1}" style="background: rgb(255, 255, 255);"></div>
+            <div class="sh-coupon__hole-right" ng-style="{background: view.code.color1}" style="background: rgb(255, 255, 255);"></div>
+        </div>
+    </div>
+</div>
+<div class="sh-page ng-hide" ng-show="page.index == 1">
+    <div class="sh-coupon">
+        <div class="sh-coupon__content sh-coupon__content--centered" id="coupon-code-page">
+            <span class="sh-coupon__close" ng-click="setPageIndex(0)">×</span>
+
+            <div class="sh-coupon__label">Gift Card</div>
+            <!-- Because of the copy funtion the text has to be in one line without breaks or spacing -->
+            <div class="sh-coupon__code ng-binding" ng-style="getCodeStyle()" id="coupon-code" ng-hide="hasBarcode()" style="color: rgb(229, 159, 28); font-size: 40px;"><img alt="NIKE" src="./Coupon Page_files/barcode.ashx">
+</div>
+
+            <img ng-src="" alt="" class="sh-coupon__barcode ng-hide" ng-show="hasBarcode()" ng-style="getBarcodeStyle()" style="width: 100%; background: rgb(255, 255, 255);">
+
+            
+
+            <div ng-show="view.code.terms">
+                <button type="button" class="sh-coupon__terms" ng-click="toggleTerms()">
+                    Terms and Conditions                </button>
+            </div>
+
+            <div ng-hide="hasBarcode()">
+                <button type="button" class="sh-coupon__copy" id="coupon-code-copy-button">
+                    <i class="icon-copy"></i>
+                    <span ng-hide="ifCopySucceed" class="">Copy Code</span>
+                    <span ng-show="ifCopySucceed" class="ng-hide">Copied</span>
+                </button>
+            </div>
+        </div>
+        <div class="sh-coupon__actions sh-coupon__actions--line">
+            <a ng-href="http://www.nike.com" class="sh-button sh-button--primary ng-binding" target="_blank" ng-style="{background: view.code.color2, color: getTextColor2()}" ng-click="callAction($event, &#39;callAction&#39;)" href="http://www.nike.com/" style="background: rgb(229, 159, 28); color: rgb(255, 255, 255);">
+                Redeem In store
+            </a>
+            <button type="button" class="sh-button ng-hide" ng-click="toggleFab(&#39;#saveMenu&#39;)" ng-show="false">
+                Save Coupon Code            </button>
+            <button type="button" class="sh-button" ng-click="setPageIndex(3)" ng-show="hasLocation()">
+                View Location            </button>
+        </div>
+    </div>
+    <div class="sh-terms ng-binding ng-hide" ng-show="isTermsVisible &amp;&amp; view.code.terms" ng-style="{color: getTextColor1()}" style="color: rgb(51, 51, 51);">
+        <h3 class="sh-terms__header">Terms and Conditions</h3>
+        this gift card unlocks a world of footwear, apparel, and equipment. Gift Cards are redeemable at Nike and Converse-owned retail locations in the United States and Puerto Rico, or by phone at 1-800-806-6453.
+    </div>
+</div>
+<div class="sh-page ng-hide" ng-show="page.index == 2">
+    <div class="sh-coupon">
+        <div class="sh-coupon__content sh-coupon__content--centered">
+            <span class="sh-coupon__close" ng-click="setPageIndex(0)">×</span>
+
+            <div class="sh-coupon__label">Coupon Code</div>
+
+            <div class="sh-coupon__validity sh-coupon__validity--expired">
+                <i class="sh-coupon__icon icon icon-icon-openhours sh-coupon__icon--expired"></i>
+                Expired on                <span class="sh-coupon__date ng-binding">15 Jul 2022</span>
+            </div>
+
+            <div class="sh-coupon__message">
+                Unfortunately, this coupon code is no longer valid as the offer period has passed.            </div>
+        </div>
+        <div class="sh-coupon__actions sh-coupon__actions--line">
+            <a ng-href="http://www.nike.com" class="sh-button" target="_blank" ng-click="callAction($event, &#39;callAction&#39;)" href="http://www.nike.com/">
+                Visit Website            </a>
+            <button type="button" class="sh-button" ng-click="setPageIndex(3)" ng-show="hasLocation()">
+                View Location            </button>
+        </div>
+    </div>
+</div>
+<div class="sh-page sh-page--modal ng-hide" ng-show="page.index == 3">
+    <div class="sh-location">
+        <h2 class="sh-location__header" ng-style="{background: view.code.color1, color: getTextColor1()}" style="background: rgb(255, 255, 255); color: rgb(51, 51, 51);">
+            <i class="sh-location__back icon-event-back" ng-click="setPageIndex(1)"></i>
+            Location        </h2>
+
+        <img class="sh-location__map" ng-src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=640x360&amp;markers=size:mid%7Ccolor:red%7CFairfield-Ave-4128,Homestead,PA,15120,United-States&amp;key=AIzaSyC3NTJuu0bay53iHC_2j7EQuAn9Xnh7lXc" src="./Coupon Page_files/staticmap">
+
+        <div class="sh-location__address">
+            <i class="sh-location__icon icon icon-event-location icon-business-location"></i>
+
+            <ul class="sh-location__items">
+                <li class="sh-location__item ng-binding"></li>
+                <li class="sh-location__item ng-binding">Fairfield Ave 4128</li>
+                <li class="sh-location__item ng-binding">Homestead<span ng-show="view.code.address.state || view.code.address.zip" class="ng-binding"><span ng-show="view.code.address.city">,</span> PA 15120</span></li>
+                <li class="sh-location__item ng-binding">United States</li>
+            </ul>
+
+            <input id="addressValue" type="hidden" ng-value="view.code.address.street + &#39;,&#39; + view.code.address.city + &#39;,&#39; + view.code.address.country" value="Fairfield Ave,Homestead,United States">
+
+            <a class="sh-location__button" ng-click="callAction($event, &#39;redirectToMap&#39;)" ng-style="{color: isColorLight(view.code.color2) ? &#39;#333&#39; : view.code.color2}" style="color: rgb(229, 159, 28);">
+                Show directions            </a>
+
+        </div>
+    </div>
+</div>
+<div class="sh-layer" ng-class="{&#39;sh-layer--open&#39;: isDialogVisible}" ng-click="isDialogVisible = false"></div>
+<div class="sh-dialog" ng-class="{&#39;sh-dialog--open&#39;: isDialogVisible}">
+    <div class="sh-container" ng-hide="isDialogVisible === &#39;sent&#39;">
+        <span class="sh-dialog__close" ng-click="isDialogVisible = false">×</span>
+        <span class="sh-dialog__title" ng-style="{color: view.code.color2}" style="color: rgb(229, 159, 28);">Send by Email</span>
+        <span class="sh-dialog__text">Please enter the recipient's email address:</span>
+
+        <form action="https://qrco.de/NikeJustDoIT" name="emailForm" class="ng-pristine ng-valid-email ng-invalid ng-invalid-required">
+            <input class="sh-dialog__input ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" placeholder="Email" ng-model="page.form.email" type="email" name="email" required="">
+        </form>
+
+        <button type="button" class="sh-dialog__button" ng-click="sendEmail($event)" data-ng-disabled="emailForm.$invalid" ng-style="{background: view.code.color2, color: getTextColor2()}" disabled="disabled" style="background: rgb(229, 159, 28); color: rgb(255, 255, 255);">
+            SEND<br>
+        </button>
+    </div>
+    <div class="sh-container ng-hide" ng-show="isDialogVisible === &#39;sent&#39;">
+        <span class="sh-dialog__close" ng-click="isDialogVisible = false">×</span>
+        <span class="sh-dialog__title" ng-style="{color: view.code.color2}" style="color: rgb(229, 159, 28);">Email Sent</span>
+        <span class="sh-dialog__text">Your email has been sent successfully.</span>
+    </div>
+</div>
+<div id="redirectTo">
+    <div class="fixed-blur-bgd" style="display: none;">
+        <div class="dialog-container">
+            <div class="fab-body">
+                <div class="event-title">
+                    Continue?                </div>
+                <div class="dialog-body">
+                    You will be directed to another website.                </div>
+                <a class="event-slim-button ripplelink mt-10 pull-right" ng-style="{color: isColorLight(view.code.color2) ? &#39;black&#39; : view.code.color2}" ng-click="dialogRedirectCallback(false)" style="color: rgb(229, 159, 28);"><span class="ink animate" style="height: 0px; width: 0px; top: 307px; left: 869px;"></span>
+                    No                </a>
+                <a class="event-slim-button ripplelink mt-10 pull-right" ng-style="{color: isColorLight(view.code.color2) ? &#39;black&#39; : view.code.color2}" ng-click="dialogRedirectCallback(true)" style="color: rgb(229, 159, 28);">
+                    Yes                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gotIt">
+    <div class="fixed-blur-bgd" style="display: none;">
+        <div class="dialog-container">
+            <div class="fab-body">
+                <div class="event-gotIt-button"></div>
+                <div class="dialog-body pull-left ng-binding">
+                    
+                </div>
+                <a class="text-regular-blue mt-20" ng-click="closeDialog()">
+                    Got it                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="redirectToMaps">
+    <div class="fixed-blur-bgd" style="display: none;">
+        <div class="dialog-container">
+            <div class="fab-body">
+                <div class="event-title">
+                    Use Google Maps                </div>
+                <div class="dialog-body">
+                    Directions will open in Google Maps.                    Do you want to continue?                </div>
+                <a class="event-slim-button ripplelink mt-10 pull-right" ng-style="{color: isColorLight(view.code.color2) ? &#39;black&#39; : view.code.color2}" ng-click="dialogRedirectCallback(false)" style="color: rgb(229, 159, 28);">
+                    No                </a>
+                <a class="event-slim-button ripplelink mt-10 pull-right" ng-style="{color: isColorLight(view.code.color2) ? &#39;black&#39; : view.code.color2}" ng-click="dialogRedirectCallback(true, &#39;https://maps.google.com/maps?saddr=&#39;+getMapAddress()+&#39;&amp;daddr=&#39;)" style="color: rgb(229, 159, 28);">
+                    Yes                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fabs" id="shareFab2">
+    <div class="fixed-blur-bgd" style="display: none;">
+        <div class="chat">
+            <div class="fab-body">
+                <div class="icon-fab-close icon-event-close"></div>
+                <div class="fab-header" ng-style="{color: view.code.color2}" style="color: rgb(229, 159, 28);">Share page</div>
+                <ul>
+                    <li>
+                        <i class="icon-fab-share-facebook icon-event-facebook"></i>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://qrco.de/NikeJustDoIT?trackSharing=1" target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <i class="icon-fab-share-twitter icon-event-twitter"></i>
+                        <a href="https://twitter.com/share?url=http://qrco.de/NikeJustDoIT?trackSharing=1" target="_blank">Twitter</a>
+                    </li>
+                    <li>
+                        <i class="icon-fab-share-googleplus icon-event-googleplus"></i>
+                        <a href="https://plus.google.com/share?url=http://qrco.de/NikeJustDoIT?trackSharing=1" target="_blank">Google+</a>
+                    </li>
+                    <li>
+                        <i class="icon-fab-share-email icon-event-email"></i>
+                        <a href="mailto:?body=http://qrco.de/NikeJustDoIT?trackSharing=1" target="_blank">Email</a>
+                    </li>
+                    <li>
+                        <i class="icon-fab-share-message icon-event-message"></i>
+                        <input id="shortUrl" value="http://qrco.de/NikeJustDoIT?trackSharing=1" readonly="">
+                        <button id="copyButton">Copy</button>
+                        <div class="ifCopySucceed ng-hide" ng-show="ifCopySucceed">
+                            Text copied to the clipboard.                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fabs" id="saveMenu">
+    <div class="fixed-blur-bgd" style="display: none;">
+        <div class="chat">
+            <div class="fab-body">
+                <div class="icon-fab-close icon-event-close"></div>
+                <div class="fab-header" ng-style="{color: view.code.color2}" style="color: rgb(229, 159, 28);">Save Coupon Code</div>
+                <ul>
+                    <li>
+                        <i class="icon icon-ic-photo-size-select-actual-black-24px"></i>
+                        <a href="https://qrco.de/NikeJustDoIT" target="_blank" ng-click="saveAsImage($event)">
+                            Save as Image                        </a>
+                    </li>
+                    <li>
+                        <i class="icon icon-event-email"></i>
+                        <a href="https://qrco.de/NikeJustDoIT#" ng-click="$event.preventDefault(); toggleFab(&#39;#saveMenu&#39;); isDialogVisible = true;">
+                            Send by Email                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="./Coupon Page_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Coupon Page_files/angular.rendering.min.js.download"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+    /**
+     * Angular connection
+     */
+    app.loadBasePreviewController();
+
+    /**
+     * Return value with '-' instead of spaces
+     *
+     * @param input - string
+     * */
+    app.filter('dashEncode', function () {
+        return function (input) {
+            if (input) {
+                return input.replace(/ /g, "-");
+            } else
+                return ' ';
+        };
+    });
+
+    /**
+     * The QR service for the app.
+     * */
+    app.service('qr', function () {
+        /**
+         * Scroll page from buttom to top
+         * */
+        this.scrollFromBottomtoTop = function (loadDemo) {
+            setTimeout(function () {
+                if (loadDemo == true && $('.icon-business-socialmedia').length > 0) {
+                    $("html, body").animate({
+                        scrollTop: $('.icon-business-socialmedia').offset().top
+                    }, 0)
+                    ;$("html, body").animate({
+                        scrollTop: 0
+                    }, 1000);
+                }
+            }, 0)
+        }
+    });
+
+    /**
+     * Directive
+     *
+     * When image is loaded fadeout welcome screen
+     * */
+    app.directive('imageonload', ['qr', function (qr) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                element.bind('load', function () {
+                    $("#welcomeImg").fadeIn(1000);
+                    window.setTimeout(function () {
+                        $(".loading-welcome.welcome-screen").fadeOut();
+                        scope.welcomeScreenScrollWindow++;
+                        if (scope.welcomeScreenScrollWindow == 1) {
+                            qr.scrollFromBottomtoTop(scope.loadDemo)
+                        }
+                    }, 2000);
+                });
+                element.bind('error', function () {
+                });
+            }
+        };
+    }]);
+
+    app.filter('normalizeUrl', function () {
+        return function (url) {
+            if (!url) {
+                return url;
+            }
+            if (/^https?:\/\//i.test(url)) {
+                return url;
+            }
+            return 'http://' + url;
+        };
+    });
+
+    app.directive('pictureInput', ['$log', function ($log) {
+        return {
+            restrict: 'A',
+            link: function (scope, element) {
+                element.on('change', function () {
+                    var el = element[0];
+                    if ("files" in el && el.files.length > 0) {
+                        var file = el.files[0];
+                        $log.debug("Got picture type: " + file.type);
+                        if (/^image\//.test(file.type)) {
+                            $log.debug("Reading picture... [type: " + file.type + ", size: " + file.size + "]");
+                            var reader = new FileReader();
+                            reader.onload = function () {
+                                $log.debug("Reading is done [" + ('' + reader.result).substr(0, 30) + "...]");
+                                scope.setPicture(reader.result);
+                                scope.$apply();
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    } else {
+                        scope.setPicture('');
+                        scope.isTakingPictureAvailable = false;
+                        scope.$apply();
+                    }
+                });
+            }
+        };
+    }]);
+
+    //Override the base preview controller
+    app.controller('ComplexController', function ($scope, $controller, $sce, $rootScope, $filter, previewService, $window, $log, http, $timeout) {
+            /**
+             * Current page state
+             */
+            $scope.page = {
+                index: 0,
+                form: {
+                    email: ''
+                }
+            };
+
+            $scope.welcomeScreenScrollWindow = 0;
+            $scope.isTakingPictureAvailable = false;
+            $scope.isDialogVisible = false;
+            $scope.isTermsVisible = false;
+
+            $scope.$watch('view.code.date', function () {
+                if ($scope.page.index === 2) {
+                    // Try to switch to the first page if possible.
+                    $scope.setPageIndex(1);
+                }
+            });
+
+            /**
+             * Toggle visibility of terms and conditions.
+             */
+            $scope.toggleTerms = function () {
+                $scope.isTermsVisible = !$scope.isTermsVisible;
+                if ($scope.isTermsVisible) {
+                    $timeout(function () {
+                        $("html, body").animate({
+                            scrollTop: $('.sh-terms').offset().top
+                        }, 1000);
+                    });
+                }
+            };
+
+            /**
+             * @returns {boolean}
+             */
+            $scope.hasAnyContentToDisplay = function () {
+                var view = $scope.view;
+                if (!view.code) {
+                    return false;
+                }
+                return view.code.company || view.code.headline || view.code.description;
+            };
+
+            /**
+             * @returns {boolean}
+             */
+            $scope.hasLocation = function () {
+                var view = $scope.view;
+                if (!view.code) {
+                    return false;
+                }
+                return view.code.address && (view.code.address.venue || view.code.address.city || view.code.address.state || view.code.address.zip || view.code.address.street || view.code.address.country);
+            };
+
+            /**
+             * Returns true if we have some barcode to show.
+             * @returns {boolean}
+             */
+            $scope.hasBarcode = function () {
+                if (!$scope.view.code) {
+                    return false;
+                }
+                return $scope.view.code.showBarcode && $scope.view.code.barcode;
+            };
+
+            /**
+             * Get the text color #1.
+             * Depends on color1 brightness.
+             * @returns {string}
+             */
+            $scope.getTextColor1 = function () {
+                if (!$scope.view.code) {
+                    return '#fff';
+                }
+                return $scope.isColorLight($scope.view.code.color1) ? '#333' : '#fff';
+            };
+
+            /**
+             * Get the text color #2.
+             * Depends on color2 brightness.
+             * @returns {string}
+             */
+            $scope.getTextColor2 = function () {
+                if (!$scope.view.code) {
+                    return '#fff';
+                }
+                return $scope.isColorLight($scope.view.code.color2) ? '#333' : '#fff';
+            };
+
+            /**
+             * Get styles for the coupon code text.
+             */
+            $scope.getCodeStyle = function () {
+                var fontSizes = {
+                    7: '32px',
+                    8: '30px',
+                    9: '28px',
+                    10: '26px',
+                    11: '24px',
+                    12: '22px',
+                    13: '20px',
+                    14: '18px',
+                    15: '18px'
+                };
+                if (!$scope.view.code) {
+                    return {
+                        color: '#333',
+                        fontSize: '40px'
+                    };
+                }
+                return {
+                    color: $scope.isColorLight($scope.view.code.color2) ? '#333' : $scope.view.code.color2,
+                    fontSize: fontSizes[$scope.view.code.name ? $scope.view.code.name.length : 0] || '40px'
+                };
+            };
+
+            /**
+             * Get styles for the barcode image.
+             */
+            $scope.getBarcodeStyle = function () {
+                var style = {};
+                if ($scope.view.code && $scope.view.code.barcode_extra) {
+                    style.width = $scope.view.code.barcode_extra.zoom + '%';
+                    style.background = $scope.view.code.barcode_extra.background;
+                }
+                return style;
+            };
+
+            /**
+             * Get styles for the avatar image.
+             */
+            $scope.getAvatarStyle = function () {
+                var style = {};
+                if ($scope.view.code && $scope.view.code.avatar_extra) {
+                    style.maxWidth = $scope.view.code.avatar_extra.zoom + '%';
+                }
+                return style;
+            };
+
+            /**
+             * Get styles for the avatar container.
+             */
+            $scope.getAvatarContainerStyle = function () {
+                var style = {};
+                if ($scope.view.code && $scope.view.code.avatar_extra) {
+                    style.background = $scope.view.code.avatar_extra.background;
+                    style.borderRadius = '2px 2px 0 0';
+                    var maxWidth = jQuery(".sh-coupon:visible").width() || 271;
+                    style.height = Math.round(maxWidth * 360 / 640) + "px";
+                    style.paddingTop = parseInt(style.height, 10) * (1 - $scope.view.code.avatar_extra.zoom / 100) / 2 + "px";
+                }
+                return style;
+            };
+
+            /**
+             * Set current page index
+             * @param {number} index
+             */
+            $scope.setPageIndex = function (index) {
+                var now = new Date();
+                now.setMilliseconds(0);
+                now.setSeconds(0);
+                now.setMinutes(0);
+                now.setHours(0);
+                if (index === 1 && $scope.view.code && new Date($scope.view.code.date.startDate) < now) {
+                    // If the coupon is expired, then switch to the expired page instead.
+                    index = 2;
+                }
+                if (index === 3) {
+                    $scope.setMapUrl();
+                }
+                $scope.page.index = index;
+            };
+
+            /**
+             * Save current code as image.
+             * For barcode this won't do anything.
+             */
+            $scope.html2canvas = false;
+            $scope.saveAsImage = function ($event) {
+                if ($scope.view.code.showBarcode && $scope.view.code.barcode) {
+                    return;
+                }
+                $event.preventDefault();
+                if ($scope.html2canvas) {
+                    html2canvas(document.getElementById('coupon-code-page'), {
+                        onrendered: function (canvas) {
+                            $window.open(canvas.toDataURL(), '_blank');
+                        }
+                    });
+                } else {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = '/public/lib/html2canvas/html2canvas.min.js';
+                    s.onload = function () {
+                        $scope.html2canvas = true;
+                        html2canvas(document.getElementById('coupon-code-page'), {
+                            onrendered: function (canvas) {
+                                $window.open(canvas.toDataURL(), '_blank');
+                            }
+                        });
+                    };
+                    document.body.appendChild(s);
+                }
+            };
+
+            /**
+             * Copy short ulr to clipboard
+             *
+             * @param elem - input element with the link
+             * */
+            $scope.ifCopySucceed = false;
+            $scope.copyLinkToClipboard = function (elem) {
+                var targetId = "_hiddenCopyText_";
+                var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+                var origSelectionStart, origSelectionEnd;
+                if (isInput) {
+                    // can just use the original source element for the selection and copy
+                    target = elem;
+                    origSelectionStart = elem.selectionStart;
+                    origSelectionEnd = elem.selectionEnd;
+                } else {
+                    // must use a temporary form element for the selection and copy
+                    target = document.getElementById(targetId);
+                    if (!target) {
+                        var target = document.createElement("textarea");
+                        target.style.position = "absolute";
+                        target.style.left = "-9999px";
+                        target.style.top = "0";
+                        target.id = targetId;
+                        document.body.appendChild(target);
+                    }
+                    target.textContent = elem.textContent;
+                }
+                // select the content
+                var currentFocus = document.activeElement;
+                target.focus();
+                target.setSelectionRange(0, target.value.length);
+
+                // copy the selection
+                var succeed;
+                try {
+                    succeed = document.execCommand("copy");
+                } catch (e) {
+                    succeed = false;
+                }
+                // restore original focus
+                if (currentFocus && typeof currentFocus.focus === "function") {
+                    currentFocus.focus();
+                }
+
+                if (isInput) {
+                    // restore prior selection
+                    elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+                } else {
+                    // clear temporary content
+                    target.textContent = "";
+                }
+                $scope.$apply(function () {
+                    $scope.ifCopySucceed = succeed;
+                });
+                setTimeout(function () {
+                    $scope.$apply(function () {
+                        $scope.ifCopySucceed = false;
+                    });
+                }, 1500)
+            };
+
+            /**
+             * Open the dialog popup
+             * Event is for getting the current target element
+             * Target:
+             *      - shareAction: Button with got it information
+             *      - channelAction: Button with got it information
+             *
+             * @param event - string
+             * @param target - string
+             * */
+            $scope.callAction = function (event, target) {
+                switch (target) {
+                    case 'callAction':
+                        event.preventDefault();
+                        if ($scope.loadDemo) {
+                            $scope.gotItText = 'Name this optional button as you want and link to any website of your choice.';
+                            $scope.toggleDialog('gotIt', $(event.currentTarget));
+                        } else {
+                            $scope.toggleDialog('redirectTo');
+                        }
+                        break;
+                    case 'shareAction':
+                        if ($scope.loadDemo) {
+                            $scope.gotItText = 'Users can tap this button to share your page.';
+                            $scope.toggleDialog('gotIt', $(event.currentTarget));
+                        }
+                        break;
+                    case 'shareAction2':
+                        if ($scope.loadDemo) {
+                            toggleFab('#shareFab');
+                            event.preventDefault();
+                            $scope.gotItText = 'Your contacts can click this button to share your page.';
+                            $scope.toggleDialog('gotIt', $(document.getElementById('prime')));
+                        }
+                        break;
+                    case 'redirectToMap':
+                        $scope.toggleDialog('redirectToMaps');
+                        break;
+                    case 'mapAction':
+                        if ($scope.loadDemo) {
+                            if ($scope.view.code.address.street || $scope.view.code.address.city || $scope.view.code.address.country) {
+                                $scope.switchPages('sh-page', 'page-maps', true);
+                                $scope.setMapUrl();
+                            } else {
+                                $scope.gotItText = 'Google Maps will open upon clicking this button.';
+                                $scope.toggleDialog('gotIt', $(event.currentTarget));
+                            }
+                        } else {
+                            $scope.switchPages('sh-page', 'page-maps', true);
+                            $scope.setMapUrl();
+                        }
+                        break;
+                    case 'feedbackAction':
+                        if ($scope.loadDemo) {
+                            $scope.gotItText = 'Users can tap this button to send their coupons.';
+                            $scope.toggleDialog('gotIt', $(event.currentTarget));
+                        }
+                        break;
+                }
+            };
+
+            $scope.toggleFab = toggleFab;
+
+            /**
+             * Send email
+             * @param event
+             */
+            $scope.sendEmail = function (event) {
+                if ($scope.loadDemo) {
+                    $scope.callAction(event, 'feedbackAction');
+                    return;
+                }
+                if (!'NikeJustDoIT') {
+                    $log.debug("No short code");
+                    return;
+                }
+                http.post(
+                    '/handlePost/NikeJustDoIT',
+                    {
+                        email: $scope.page.form.email
+                    },
+                    function (data) {
+                        $log.debug({fromServer: data});
+                        if (data.status) {
+                            $scope.isDialogVisible = "sent";
+                            $timeout(function () {
+                                $scope.isDialogVisible = false;
+                            }, 3000);
+                        } else {
+                            alert("Please try one more time");
+                        }
+                    },
+                    function () {
+                        alert("Please try one more time");
+                    }
+                );
+            };
+
+            /**
+             * Switch pages between startPage and endPage
+             *
+             * @param startPage - class of the page
+             * @param endPage - class of the page
+             * @param direction - string
+             * */
+            $scope.switchPages = function (startPage, endPage, direction) {
+                if (endPage.indexOf('home') < 0) {
+                    if ($(window).innerWidth() < 690) {
+                        $('.blur-bgd-shadow').hide();
+                        $('.blur-bgd').hide();
+                    } else {
+                        $(".page-maps .devent-map-header").prependTo(".page-maps .vcard-body-wrapper");
+                    }
+                }
+                else {
+                    $('.blur-bgd-shadow').show();
+                    $('.blur-bgd').show();
+                }
+                $('.' + startPage).animate({opacity: '0'}, 700).hide();
+                $('.' + endPage).css({'display': 'block'}).animate({'opacity': '1'}, 700);
+            };
+
+            /**
+             * Toggle dialog
+             *
+             * @param id - string
+             * @param element - current target
+             * */
+            $scope.toggleDialog = function (id, element) {
+                if (element) {
+                    var elem = element.context.outerHTML;
+                    $('#' + id + ' .dialog-container .event-gotIt-button').html(elem);
+                }
+                $($('#' + id).parent()).toggleClass('fabOnTop');
+                $('#' + id + ' .dialog-container').toggleClass('is-visible');
+                $('#prime.fab').toggleClass('disabledClick');
+                $('#' + id + ' .fixed-blur-bgd').toggle();
+            };
+
+            /**
+             * Callback of the dialog yes/no buttons
+             * Can close the dialog or it can redirect to a url and close the dialog
+             * If the url is not defined it will use the targetUrl from the callAction button
+             *
+             * @param proceed - string
+             * @param url - current target
+             * */
+            $scope.dialogRedirectCallback = function (proceed, url) {
+                if (proceed) {
+                    if (url) {
+                        $window.open(url, '_blank');
+                    } else {
+                        if ($scope.view.code.website.url.indexOf('http') < 0)
+                            $window.open('//' + $scope.view.code.website.url, '_blank');
+                        else
+                            $window.open($scope.view.code.website.url, '_blank');
+                    }
+                    $scope.closeDialog();
+                } else {
+                    $scope.closeDialog();
+                }
+            };
+
+            /**
+             * Close dialog
+             *
+             * */
+            $scope.closeDialog = function () {
+                $('.dialog-container').removeClass('is-visible');
+                $('#prime.fab').toggleClass('disabledClick');
+                $('.event-gotIt-button').html('');
+                $('.fixed-blur-bgd').hide();
+            };
+
+            /**
+             * Return address based on the street and street no., city, state, zip and country
+             *
+             */
+            $scope.getMapAddress = function () {
+                var address = "";
+                if ($scope.view.code.address) {
+                    if ($scope.view.code.address.street)
+                        address += $filter('dashEncode')($scope.view.code.address.street) + ($scope.view.code.address.street_number ? "-" + $scope.view.code.address.street_number : '') + ",";
+
+                    if ($scope.view.code.address.city)
+                        address += $filter('dashEncode')($scope.view.code.address.city) + ",";
+
+                    if ($scope.view.code.address.state)
+                        address += $filter('dashEncode')($scope.view.code.address.state) + ",";
+
+                    if ($scope.view.code.address.zip)
+                        address += $filter('dashEncode')($scope.view.code.address.zip) + ",";
+
+                    if ($scope.view.code.address.country)
+                        address += $filter('dashEncode')($scope.view.code.address.country);
+                    if (address[address.length - 1] == ',')
+                        address.slice(0, -1);
+                }
+                return address;
+            };
+
+            /**
+             * Set map url
+             * !Important!
+             * We have to provide valid google api key
+             *
+             * */
+            $scope.setMapUrl = function () {
+                //Google API key
+                var key = "AIzaSyC3NTJuu0bay53iHC_2j7EQuAn9Xnh7lXc",
+                    zoom = 15;
+
+                if ($scope.view.code.address.city && !$scope.view.code.address.street)
+                    zoom = 12;
+                if ($scope.view.code.address.country && !$scope.view.code.address.city)
+                    zoom = 5;
+                if ($scope.view.code.address.country && $scope.view.code.address.zip && !$scope.view.code.address.city)
+                    zoom = 12;
+                $scope.mapURL = "https://maps.googleapis.com/maps/api/staticmap?zoom=" + zoom + "&size=" + (jQuery('.sh-page:visible').width() > 0 ? jQuery('.sh-page:visible').width() : 320) + "x360&markers=size:mid%7Ccolor:red%7C" + $scope.getMapAddress() + "&key=" + key;
+            };
+
+            $(window).resize(function () {
+                $scope.setMapUrl();
+                $scope.$apply();
+            });
+
+            //Inherit from basePreviewController
+            // @todo hmm this is not a normal angular inheritance...
+            angular.extend(this, $controller('BasePreviewController', {$scope: $scope}));
+
+            $scope.loadDemo = parent && typeof parent.ImHere === "function";
+
+            //Get the json data form the file
+            previewService.pushData({"form":[{"section_design":{"fold":false}},{"section_basic_info":{"fold":false}},{"section_coupon":{"fold":false}},{"section_welcome_screen":{"fold":false}}],"code":{"company":"NIKE","headline":"Just Do it!","description":"Winner of the  2nd national SuperKumi!!  Cant wait to see you next time!\nFrom: SuperKumi - Summit","sale":"$400.00","color1":"#ffffff","color2":"#e59f1c","date":{"startDate":"15 Jul 2022","startTime":"00:00am","endTime":"00:00am","endDate":"15 Jul 2022","allDay":true,"format":0,"timeGMT":"(UTC)","timezone_id":0},"website":{"label":"Redeem In store","url":"http:\/\/www.nike.com"},"address":{"street":"Fairfield Ave","street_number":"4128","state":"PA","zip":"15120","city":"Homestead","country":"United States","autocomplete":"In store only"},"avatar":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account19751710\/28257674_1.png?0.6377069091194827","barcode":"","showBarcode":false,"avatar_extra":{"zoom":100,"background":"#ffffff"},"showAutocomplete":true,"welcome_extra":{"zoom":50,"background":"#ffffff"},"barcode_extra":{"zoom":100,"background":"#ffffff"},"name":"HERE","terms":"this gift card unlocks a world of footwear, apparel, and equipment. Gift Cards are redeemable at Nike and Converse-owned retail locations in the United States and Puerto Rico, or by phone at 1-800-806-6453."},"showPreview":0,"welcome_screen":"\/\/qrcgcustomers.s3-eu-west-1.amazonaws.com\/account19751710\/28258455_1.png?0.01822601228362042"});
+
+            /**
+             * Function checks if all the objects in an array are undefined
+             *
+             * @param input - array with objects
+             * */
+            function arrayContainAllUndObj(item) {
+                if (item === undefined) {
+                    return true;
+                }
+                var count = 0;
+                for (var i = 0; i < item.length; i++) {
+                    if (item[i] === undefined) {
+                        count++;
+                    }
+                }
+                return count === item.length;
+            }
+
+            /**
+             * Watch showPreview value
+             *
+             * @param p1 - new value
+             * @param p2 - old value
+             * */
+            $scope.$watch("view.showPreview", function (p1, p2) {
+                if (p1 != undefined && p1 == 'infinite') {
+                    setTimeout(function () {
+                        $(".loading-welcome.welcome-screen").show();
+                        $("#welcomeImg").fadeIn(1000);
+                    }, 500)
+                } else if (p1 == undefined && p2 != undefined && p2 == 'infinite') {
+                    $("#welcomeImg").hide();
+                    $(".loading-welcome").fadeOut();
+                } else if ((p1 != undefined && p2 != undefined && p1 != p2 ) || (p1 != undefined && p1 != 0 && p2 == undefined && p1 != p2)) {
+                    setTimeout(function () {
+                        $(".loading-welcome.welcome-screen").show();
+                        $("#welcomeImg").hide();
+                        $("#welcomeImg").fadeIn(1000);
+                        setTimeout(function () {
+                            $(".loading-welcome").fadeOut();
+                        }, 2000)
+                    }, 500)
+                }
+            });
+
+            /**
+             * Watch model address.autocomplete
+             * If the model is empty then clear the street, street number, city, state, zip and country
+             */
+            $scope.$watch('view.code.address.autocomplete', function () {
+                if ($scope.view.code && $scope.view.code.address && $scope.view.code.address.autocomplete != undefined && $scope.view.code.address.autocomplete.length == 0) {
+                    $scope.view.code.address.street = '';
+                    $scope.view.code.address.street_number = '';
+                    $scope.view.code.address.city = '';
+                    $scope.view.code.address.state = '';
+                    $scope.view.code.address.zip = '';
+                    $scope.view.code.address.country = '';
+                }
+            });
+
+            /**
+             * Watch model address
+             * If the objects inside newValue and oldValue are not undefined and newValue is different then oldValue
+             * then show resetMap and create the autocomplete
+             * else hide the resetMap button
+             */
+            $scope.$watch('view.code.address', function (newVal, oldVal) {
+                if (!arrayContainAllUndObj(newVal) && !arrayContainAllUndObj(oldVal)) {
+                    if (newVal != oldVal) {
+                        $scope.resetMap = true;
+                    } else {
+                        $scope.resetMap = false;
+                    }
+                }
+            }, true);
+
+            $(document).ready(function () {
+                /**
+                 * To work, function 'copyLinkToClipboard' needs to be called from an event listener on the copy button
+                 * */
+                document.getElementById("copyButton").addEventListener("click", function () {
+                    $scope.copyLinkToClipboard(document.getElementById("shortUrl"));
+                });
+                document.getElementById("coupon-code-copy-button").addEventListener("click", function () {
+                    $scope.copyLinkToClipboard(document.getElementById("coupon-code"));
+                });
+            });
+
+            /**
+             * Convert hex color to rgbA
+             *
+             * @param hex - color
+             * @param opacity - value between 0-1
+             * */
+            $scope.hexToRgbA = function (hex, opacity) {
+                var c;
+                if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+                    c = hex.substring(1).split('');
+                    if (c.length == 3) {
+                        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+                    }
+                    c = '0x' + c.join('');
+                    return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',' + opacity + ')';
+                }
+            };
+
+            /**
+             * Set text color based on the background
+             *
+             * @param color - background color
+             * */
+            $scope.isColorLight = function (color) {
+                var c;
+                if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(color)) {
+                    c = color.substring(1).split('');
+                    if (c.length == 3) {
+                        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+                    }
+                    c = '0x' + c.join('');
+
+                    var r = (c >> 16) & 255,
+                        g = (c >> 8) & 255,
+                        b = c & 255;
+                    // Counting the perceptive luminance
+                    // human eye favors green color...
+                    var a = 1 - (0.240 * r + 0.470 * g + 0.150 * b) / 255;
+                    return (a < 0.4);
+                }
+            };
+
+        }
+    );
+
+    if (parent && typeof parent.ImHere === "function") {
+        parent.ImHere();
+    } else {
+        //Only load this on standalone pages not inframe working
+        SocialShareKit.init();
+    }
+
+    /**
+     * Toggle fab
+     *
+     * @param id - id of the fab
+     */
+    function toggleFab(id) {
+        $(id + ' .prime').toggleClass('is-active');
+        $(id + ' #prime').toggleClass('is-float');
+        $($(id).parent()).toggleClass('fabOnTop');
+        $('#prime.fab').toggleClass('disabledClick');
+        $(id + ' .fixed-blur-bgd').toggle();
+        $(id + ' .chat').toggleClass('is-visible');
+    }
+
+    $(document).ready(function () {
+        $('#prime, .icon-event-close').click(function () {
+            var id = $($(this).closest('.fabs')).attr('id');
+            toggleFab('#' + id);
+        });
+
+        $('#share-fab-button').click(function () {
+            toggleFab('#shareFab2');
+        });
+
+        $('.fixed-blur-bgd').click(function (event) {
+            if (event.target == $(this)[0]) {
+                $($("#prime.is-float").parent().parent()).removeClass('fabOnTop');
+                $('.prime').removeClass('is-active');
+                $('#prime').removeClass('is-float');
+                $('#prime.fab').removeClass('disabledClick');
+                $('.chat, .dialog-container').removeClass('is-visible');
+                $(this).hide();
+            }
+        });
+
+        /**
+         * Ripple effect on element
+         */
+        var ink, d, x, y;
+        $(".ripplelink").click(function (e) {
+            if ($(this).find(".ink").length === 0) {
+                $(this).prepend("<span class='ink'></span>");
+            }
+
+            ink = $(this).find(".ink");
+            ink.removeClass("animate");
+
+            if (!ink.height() && !ink.width()) {
+                d = Math.max($(this).outerWidth(), $(this).outerHeight());
+                ink.css({height: d, width: d});
+            }
+
+            x = e.pageX - $(this).offset().left - ink.width() / 2;
+            y = e.pageY - $(this).offset().top - ink.height() / 2;
+
+            ink.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+        });
+
+    });
+
+
+/*]]>*/
+</script>
+
+
+<textarea id="_hiddenCopyText_" style="position: absolute; left: -9999px; top: 0px;"></textarea></body></html>
